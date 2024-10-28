@@ -2,6 +2,8 @@
 
 namespace App\Livewire;
 
+
+use Livewire\Attributes\Locked;
 use Livewire\Component;
 
 class Properties extends Component
@@ -9,7 +11,8 @@ class Properties extends Component
 
     public string $nameSystem;
 
-    public string $name;
+
+    public string $name = 'Sua mensagem';
 
     public string $lastName;
 
@@ -32,7 +35,7 @@ class Properties extends Component
 
     public function refresh()
     {
-
+        $this->reset('name', 'lastName');
     }
 
 }
