@@ -19,6 +19,12 @@
         <span wire:loading wire:target="calculate"> Calculando .... </span>
     </x-primary-button>
 
+
+    <x-primary-button type="button" @click="$wire.calculate()">
+        Calculando pelo alpine
+        <span wire:loading wire:target="toLogando"> ... </span>
+    </x-primary-button>
+
     <br>
 
     <span wire:loading wire:target='calculate' class="text-blue-600 font-bold italic">Verificando ... Aguarde!</span>

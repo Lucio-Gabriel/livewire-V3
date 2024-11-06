@@ -2,6 +2,9 @@
 
 namespace App\Livewire;
 
+use Illuminate\Container\Attributes\Log;
+use Illuminate\Support\Facades\Log as FacadesLog;
+use Livewire\Attributes\Renderless;
 use Livewire\Component;
 
 class Calculadora extends Component
@@ -31,8 +34,26 @@ class Calculadora extends Component
 
     public function naoQueroY()
     {
-
         $this->num1 = str($this->num1)->replace('y', 'Gabriel no Y', true);
 
     }
+
+    #[Renderless]
+    public function toLogando()
+    {
+        FacadesLog::inf('logando ...' . now()->timestamp);
+    }
+
+    // class SearchComponent extends \Livewire\Component
+    // {
+    //     public $query = '';
+    //     public $results = [];
+
+    //     public function updatedQuery()
+    //     {
+    //         $this->results = Model::where('name', 'like', '%' . $this->query . '%')->get();
+    //     }
+    // }
+
+
 }
