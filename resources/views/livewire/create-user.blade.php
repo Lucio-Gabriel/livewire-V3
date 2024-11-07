@@ -1,7 +1,7 @@
 <form wire:submit="submit" class="flex flex-col gap-4">
     <div>
-        <x-text-input placeholder="User Name" wire:model.live="name" />
-        @error('name')
+        <x-text-input placeholder="User Name" wire:model.live="form.name" />
+        @error('form.name')
             <div class="text-sm italic font-semibold text-red-400">
                 {{$message}}
             </div>
@@ -9,8 +9,8 @@
     </div>
 
     <div>
-        <x-text-input placeholder="Email" wire:model.blur="email" />
-        @error('email')
+        <x-text-input placeholder="Email" wire:model.blur="form.email" />
+        @error('form.email')
             <div class="text-sm italic font-semibold text-red-400">
                 {{$message}}
             </div>
@@ -18,8 +18,8 @@
      </div>
 
     <div>
-        <x-text-input placeholder="password" wire:model="password" type="password" />
-        @error('password')
+        <x-text-input placeholder="password" wire:model="form.password" type="password" />
+        @error('form.password')
         <div class="text-sm italic font-semibold text-red-400">
             {{$message}}
         </div>
@@ -27,8 +27,8 @@
     </div>
 
     <div>
-    <x-text-input placeholder="Password Confirmation" wire:model="password_confirmation" type="password" />
-        @error('password')
+    <x-text-input placeholder="Password Confirmation" wire:model="form.password_confirmation" type="password" />
+        @error('form.password')
         <div class="text-sm italic font-semibold text-red-400">
             {{$message}}
         </div>
