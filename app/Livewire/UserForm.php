@@ -3,25 +3,31 @@
 namespace App\Livewire;
 
 use App\Models\User;
+use Livewire\Attributes\Rule;
 use Livewire\Component;
+use Symfony\Contracts\Service\Attribute\Required;
 
 class UserForm extends Component
 {
-
+    #[Rule(['required', 'string', 'max:255', 'min:2'])]
     public string $name;
+
+    #[Rule(['required', 'email', 'max:255', 'min:2'])]
     public string $email;
+
+    #[Rule(['required', 'email', 'max:255', 'min:2'])]
     public string $password;
     public string $password_confirmation;
 
 
-    public function rules()
-    {
-        return[
-            'name' => ['required', 'string', 'max:255', 'min:2'],
-            'email' => ['required', 'string', 'max:255', 'min:2'],
-            'password' => ['required', 'string', 'max:255', 'min:2', 'confirmed'],
-        ];
-    }
+    // public function rules()
+    // {
+    //     return[
+    //         'name' => ['required', 'string', 'max:255', 'min:2'],
+    //         'email' => ['required', 'string', 'max:255', 'min:2'],
+    //         'password' => ['required', 'string', 'max:255', 'min:2', 'confirmed'],
+    //     ];
+    // }
 
     public function render()
     {
